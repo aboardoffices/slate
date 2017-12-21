@@ -2,10 +2,7 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - shell
   - ruby
-  - python
-  - javascript
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -25,7 +22,7 @@ We have language bindings in Shell, Ruby, and Python! You can view code examples
 
 This example API documentation page was created with [Slate](https://github.com/lord/slate). Feel free to edit it and use it as a base for your own API's documentation.
 
-# Authentication
+# Login
 
 > To authorize, use this code:
 
@@ -55,7 +52,7 @@ let api = kittn.authorize('meowmeowmeow');
 
 > Make sure to replace `meowmeowmeow` with your API key.
 
-Kittn uses API keys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+Kitteenn uses API keeeeys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
 Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
@@ -65,26 +62,25 @@ Kittn expects for the API key to be included in all API requests to the server i
 You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-# Kittens
+# Logout
 
-## Get All Kittens
+> To authorize, use this code:
 
 ```ruby
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get
 ```
 
 ```python
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
-api.kittens.get()
 ```
 
 ```shell
-curl "http://example.com/api/kittens"
+# With shell, you can just pass the correct header with each request
+curl "api_endpoint_here"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -92,65 +88,39 @@ curl "http://example.com/api/kittens"
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
-let kittens = api.kittens.get();
 ```
 
-> The above command returns JSON structured like this:
+> Make sure to replace `meowmeowmeow` with your API key.
 
-```json
-[
-  {
-    "id": 1,
-    "name": "Fluffums",
-    "breed": "calico",
-    "fluffiness": 6,
-    "cuteness": 7
-  },
-  {
-    "id": 2,
-    "name": "Max",
-    "breed": "unknown",
-    "fluffiness": 5,
-    "cuteness": 10
-  }
-]
-```
+Kitteenn uses API keeeeys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
-This endpoint retrieves all kittens.
+Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-### HTTP Request
+`Authorization: meowmeowmeow`
 
-`GET http://example.com/api/kittens`
-
-### Query Parameters
-
-Parameter | Default | Description
---------- | ------- | -----------
-include_cats | false | If set to true, the result will also include cats.
-available | true | If set to false, the result will include kittens that have already been adopted.
-
-<aside class="success">
-Remember — a happy kitten is an authenticated kitten!
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
 </aside>
 
-## Get a Specific Kitten
+# Fetch Facility
+
+> To authorize, use this code:
 
 ```ruby
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.get(2)
 ```
 
 ```python
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
-api.kittens.get(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
+# With shell, you can just pass the correct header with each request
+curl "api_endpoint_here"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -158,54 +128,39 @@ curl "http://example.com/api/kittens/2"
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.get(2);
 ```
 
-> The above command returns JSON structured like this:
+> Make sure to replace `meowmeowmeow` with your API key.
 
-```json
-{
-  "id": 2,
-  "name": "Max",
-  "breed": "unknown",
-  "fluffiness": 5,
-  "cuteness": 10
-}
-```
+Kitteenn uses API keeeeys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
 
-This endpoint retrieves a specific kitten.
+Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+`Authorization: meowmeowmeow`
 
-### HTTP Request
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
 
-`GET http://example.com/kittens/<ID>`
+# Fetch Projects
 
-### URL Parameters
-
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to retrieve
-
-## Delete a Specific Kitten
+> To authorize, use this code:
 
 ```ruby
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
-api.kittens.delete(2)
 ```
 
 ```python
 import kittn
 
 api = kittn.authorize('meowmeowmeow')
-api.kittens.delete(2)
 ```
 
 ```shell
-curl "http://example.com/api/kittens/2"
-  -X DELETE
+# With shell, you can just pass the correct header with each request
+curl "api_endpoint_here"
   -H "Authorization: meowmeowmeow"
 ```
 
@@ -213,27 +168,302 @@ curl "http://example.com/api/kittens/2"
 const kittn = require('kittn');
 
 let api = kittn.authorize('meowmeowmeow');
-let max = api.kittens.delete(2);
 ```
 
-> The above command returns JSON structured like this:
+> Make sure to replace `meowmeowmeow` with your API key.
 
-```json
-{
-  "id": 2,
-  "deleted" : ":("
-}
+Kitteenn uses API keeeeys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+
+Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: meowmeowmeow`
+
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
+
+# Get Booking Unit Type
+
+> To authorize, use this code:
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
 ```
 
-This endpoint deletes a specific kitten.
+```python
+import kittn
 
-### HTTP Request
+api = kittn.authorize('meowmeowmeow')
+```
 
-`DELETE http://example.com/kittens/<ID>`
+```shell
+# With shell, you can just pass the correct header with each request
+curl "api_endpoint_here"
+  -H "Authorization: meowmeowmeow"
+```
 
-### URL Parameters
+```javascript
+const kittn = require('kittn');
 
-Parameter | Description
---------- | -----------
-ID | The ID of the kitten to delete
+let api = kittn.authorize('meowmeowmeow');
+```
 
+> Make sure to replace `meowmeowmeow` with your API key.
+
+Kitteenn uses API keeeeys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+
+Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: meowmeowmeow`
+
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
+
+
+# Get type pricing
+
+> To authorize, use this code:
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+```
+
+```shell
+# With shell, you can just pass the correct header with each request
+curl "api_endpoint_here"
+  -H "Authorization: meowmeowmeow"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+```
+
+> Make sure to replace `meowmeowmeow` with your API key.
+
+Kitteenn uses API keeeeys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+
+Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: meowmeowmeow`
+
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
+
+
+# Property Index
+
+> To authorize, use this code:
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+```
+
+```shell
+# With shell, you can just pass the correct header with each request
+curl "api_endpoint_here"
+  -H "Authorization: meowmeowmeow"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+```
+
+> Make sure to replace `meowmeowmeow` with your API key.
+
+Kitteenn uses API keeeeys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+
+Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: meowmeowmeow`
+
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
+
+
+# Get my properties (for owners)
+
+> To authorize, use this code:
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+```
+
+```shell
+# With shell, you can just pass the correct header with each request
+curl "api_endpoint_here"
+  -H "Authorization: meowmeowmeow"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+```
+
+> Make sure to replace `meowmeowmeow` with your API key.
+
+Kitteenn uses API keeeeys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+
+Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: meowmeowmeow`
+
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
+
+
+# Get property types of individual properties
+
+> To authorize, use this code:
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+```
+
+```shell
+# With shell, you can just pass the correct header with each request
+curl "api_endpoint_here"
+  -H "Authorization: meowmeowmeow"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+```
+
+> Make sure to replace `meowmeowmeow` with your API key.
+
+Kitteenn uses API keeeeys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+
+Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: meowmeowmeow`
+
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
+
+
+# Create Properties - Step 1
+
+> To authorize, use this code:
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+```
+
+```shell
+# With shell, you can just pass the correct header with each request
+curl "api_endpoint_here"
+  -H "Authorization: meowmeowmeow"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+```
+
+> Make sure to replace `meowmeowmeow` with your API key.
+
+Kitteenn uses API keeeeys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+
+Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: meowmeowmeow`
+
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
+
+
+# Create properties - Step 2
+
+> To authorize, use this code:
+
+```ruby
+require 'kittn'
+
+api = Kittn::APIClient.authorize!('meowmeowmeow')
+```
+
+```python
+import kittn
+
+api = kittn.authorize('meowmeowmeow')
+```
+
+```shell
+# With shell, you can just pass the correct header with each request
+curl "api_endpoint_here"
+  -H "Authorization: meowmeowmeow"
+```
+
+```javascript
+const kittn = require('kittn');
+
+let api = kittn.authorize('meowmeowmeow');
+```
+
+> Make sure to replace `meowmeowmeow` with your API key.
+
+Kitteenn uses API keeeeys to allow access to the API. You can register a new Kittn API key at our [developer portal](http://example.com/developers).
+
+Kittn expects for the API key to be included in all API requests to the server in a header that looks like the following:
+
+`Authorization: meowmeowmeow`
+
+<aside class="notice">
+You must replace <code>meowmeowmeow</code> with your personal API key.
+</aside>
