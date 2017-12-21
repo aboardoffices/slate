@@ -2,7 +2,7 @@
 title: API Reference
 
 language_tabs: # must be one of https://git.io/vQNgJ
-  - ruby
+  - postman
 
 toc_footers:
   - <a href='#'>Sign Up for a Developer Key</a>
@@ -20,14 +20,46 @@ Aboard Offices is your one-stop destination to find flexible co- working spaces.
 
 Booking your perfect co-working space has never been so easy, your workspace is just a click away. It is the easiest network for you to book your dream workspace. All you have to do is search, visit, book, & thrive with Aboard Offices!
 
+
+# Authorization
+To Authorize the API we need to send access_tokem with the URL like follows :
+
+```json
+{
+    "status": "failure",
+    "error": "Not authorized to access API"
+}
+```
+
+### HTTP Request
+
+`GET http://aboardoffices.com/api/v1`
+
+
+### Query Parameters
+
+Parameter | Default | Description
+--------- | ------- | -----------
+access_token | testtest | AccessToken is mandatory for every API request  .
+
+<aside class="notice">
+  You must replace accesstoken with valid token.
+</aside>
+
+
+
+
 # Login
 
 > To authorize, use this code:
 
-```ruby
-require 'kittn'
+```postman
 
-api = Kittn::APIClient.authorize!('meowmeowmeow')
+{
+    "status": "failure",
+    "error": "Not authorized to access API"
+}
+
 ```
 
 ```python
@@ -64,7 +96,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 > To authorize, use this code:
 
-```ruby
+```postman
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
@@ -96,15 +128,12 @@ Kittn expects for the API key to be included in all API requests to the server i
 
 `Authorization: meowmeowmeow`
 
-<aside class="notice">
-You must replace <code>meowmeowmeow</code> with your personal API key.
-</aside>
 
 # Fetch Facility
 
 > To authorize, use this code:
 
-```ruby
+```postman
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
@@ -144,7 +173,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 > To authorize, use this code:
 
-```ruby
+```postman
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
@@ -184,7 +213,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 > To authorize, use this code:
 
-```ruby
+```postman
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
@@ -225,7 +254,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 > To authorize, use this code:
 
-```ruby
+```postman
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
@@ -266,7 +295,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 > To authorize, use this code:
 
-```ruby
+```postman
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
@@ -307,7 +336,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 > To authorize, use this code:
 
-```ruby
+```postman
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
@@ -348,7 +377,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 > To authorize, use this code:
 
-```ruby
+```postman
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
@@ -389,7 +418,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 > To authorize, use this code:
 
-```ruby
+```postman
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
@@ -430,7 +459,7 @@ You must replace <code>meowmeowmeow</code> with your personal API key.
 
 > To authorize, use this code:
 
-```ruby
+```postman
 require 'kittn'
 
 api = Kittn::APIClient.authorize!('meowmeowmeow')
